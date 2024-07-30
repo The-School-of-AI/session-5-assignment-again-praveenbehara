@@ -4,37 +4,22 @@
 EPAi5 Session 5 Template
 
 ### time_it(fn, *args, repetitions= 1, **kwargs)
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
+This function is used to time the execution of the specified function for the mentioned number of repitions.
+Any optional arguments are captured in args, while any named arguments apart from repetitions would be captured inside kwargs.
 
 
 ### squared_power_list
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
+This function accepts a number, a start and end value. 
+The number is raised to the power of values between start and end.
+The resulting numbers are stored as a list and returned.
 
 ### 'polygon_area
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
+Function capable of calculating the area of polygons whose sides vary from 3 to 6 (both inclusive).
+Standard formulae have been used to calculate the areas.
 
 ### 'temp_converter
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
+Function converts the temperature from Farhenheit to Celsius and vice-versa.
 
 ### 'speed_converter
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
-word word word word word word word word word word word word word word word word word word word word 
+Given speed in Kilometer or metres or feet or yards.. the function can calculate the speed for varying time intervals.
+The valid time intervals are millisecond, second, minute, hour, and day.
