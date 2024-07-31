@@ -1,6 +1,8 @@
-"""WRITE PROPER ASSINGMENT DESCIPTION HERE AND DELETE THIS MESSAGE"""
+"""Assignment 5
+This assignment is going to test the execution duration for multiple functions.
+"""
 
-import time
+from fractions import Fraction
 from datetime import datetime
 import math
 
@@ -81,15 +83,15 @@ def temp_converter(temp, *args, temp_given_in = 'f', **kwargs):
     if (type(temp) not in [int, float]):
         raise TypeError("Only int or float values are allowed for temperature")
 
-    if (temp_given_in.lower() == 'c' and temp < -273.15):
-        raise ValueError("Temprature can't go below -273.15 celsius = 0 Kelvin")
-    elif (temp_given_in.lower() == 'f' and temp < -459.67):
-        raise ValueError("Temprature can't go below -459.67 fahrenheit = 0 Kelvin")
-
     if (not type(temp_given_in) is str):
         raise TypeError("Character string expected")
     elif (temp_given_in.lower() not in ['f', 'c']):
         raise ValueError("Only f or c is allowed")
+
+    if (temp_given_in.lower() == 'c' and temp < -273.15):
+        raise ValueError("Temprature can't go below -273.15 celsius = 0 Kelvin")
+    elif (temp_given_in.lower() == 'f' and temp < -459.67):
+        raise ValueError("Temprature can't go below -459.67 fahrenheit = 0 Kelvin")
 
     if (len(args) > 0):
         raise TypeError("temp_converter function takes maximum 1 positional arguments, more provided")
@@ -106,8 +108,6 @@ def speed_converter(speed, *args, dist='km', time='min', **kwargs):
     """Converts speed from kmph (provided by user as input) to different units
     dist can be km/m/ft/yrd time can be ms/s/min/hr/day """
 
-    dist, time = dist.lower(), time.lower()
-
     # Validations
     if (not any(type(speed) is t for t in [int, float])):
         raise TypeError("Speed can be int or float type only")
@@ -117,6 +117,8 @@ def speed_converter(speed, *args, dist='km', time='min', **kwargs):
     
     if (not type(time) is str):
         raise TypeError(f"Character string expected for time. Provided {time}")
+    
+    dist, time = dist.lower(), time.lower()
     
     if (speed < 0):
         raise ValueError("Speed can't be negative")
@@ -142,6 +144,8 @@ def speed_converter(speed, *args, dist='km', time='min', **kwargs):
         mul_fac = dict(zip(['ms', 's', 'min', 'hr', 'day'], [1/3600.0, 1/3.6, 1/0.06, 1000, 24000]))
         return int(speed * mul_fac[time])
     elif (dist == 'ft'):
-        pass
+        mul_fac = dict(zip(['ms', 's', 'min', 'hr', 'day'], [Fraction(33, 36000), Fraction(32808, 36000), Fraction(328084, 6000), Fraction(328084, 100), Fraction(7874010, 100)]))
+        return int(speed * mul_fac[time])
     elif (dist == 'yrd'):
-        pass
+        mul_fac = dict(zip(['ms', 's', 'min', 'hr', 'day'], [Fraction(11, 36000), Fraction(1094, 3600), Fraction(109361, 6000), Fraction(109361, 100), Fraction(2624662, 100)]))
+        return int(speed * mul_fac[time])
